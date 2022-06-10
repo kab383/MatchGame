@@ -71,6 +71,9 @@ namespace MatchGame
                     animalEmoji.RemoveAt(index);
                 }
             }
+            timer.Start();
+            tenthsOfSecondsElapsed = 0;
+            matchesFound = 0;
         }
 
         TextBlock lastTextBlockClicked;
@@ -87,6 +90,7 @@ namespace MatchGame
             }
             else if (textBlock.Text == lastTextBlockClicked.Text)
             {
+                matchesFound++;
                 textBlock.Visibility = Visibility.Hidden;
                 findingMatch = false;
             }
